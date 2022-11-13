@@ -52,7 +52,7 @@ function initializeServiceWorker() {
         // Steps B3-B6 will be *inside* the event listener's function created in B2
         // B3. TODO - Register './sw.js' as a service worker (The MDN article
         //            "Using Service Workers" will help you here)
-        const registration = await navigator.serviceWorker.register("./sw.js");
+        const registration = await navigator.serviceWorker.register("/sw.js");
         // B4. TODO - Once the service worker has been successfully registered, console
         //            log that it was successful.
         console.log("Service worker has been successfully registered");
@@ -120,7 +120,7 @@ async function getRecipes() {
         //            if you have, then save the recipes to storage using the function
         //            we have provided. Then, pass the recipes array to the Promise's
         //            resolve() method.
-        if (recipesArray.length == RECIPE_URLS.length) {
+        if (recipesArray.length === RECIPE_URLS.length) {
           saveRecipesToStorage(recipesArray);
           resolve(recipesArray);
         }
