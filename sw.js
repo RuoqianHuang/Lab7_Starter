@@ -50,7 +50,7 @@ self.addEventListener('fetch', function (event) {
       return cachedResponse;
     }
     else {
-      let fetchedResponse = fetch(event.request);
+      let fetchedResponse = await fetch(event.request);
       // Add the network response to the cache for future visits.
       // Note: we need to make a copy of the response to save it in
       // the cache and use the original as the request response.
